@@ -149,7 +149,7 @@ const MyPortfolio = () => {
         </div>
         <div
         className="madeby"
-          style={{ display: "flex", justifyContent: "center", padding: "4rem" }}
+          style={{ display: "flex", justifyContent: "center"}}
         >
           build with ♥ by &nbsp;
           <a href="https://www.instagram.com/mahardikabayu_desu/">
