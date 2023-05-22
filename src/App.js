@@ -9,15 +9,19 @@
  * PascalCase
  */
 
+import "./App.css";
 const PORTFOLIO_DATA = {
   nama_lengkap: "Mahardika Bayu Setya Budi",
   pekerjaan: "Front-end Developer",
   photo_profile: "/assets/Artboard 1_2.png",
-  tentang_saya:
-    "Halo.. Nama saya Mahardika Bayu Setya Budi, asal saya dari Brebes, umur saya 19 tahun, saya suka mengembangkan web menggunakan Framework Javascript, senang jika dapat bertemu di kesempatan mendatang~",
+  tentang_saya_1: `Halo.. Nama saya Mahardika Bayu Setya Budi, asal saya dari Brebes, umur saya 19 tahun. Saya adalah web programmer yang berkutat di bidang Frontend dan sekarang sedang belajar framework atau library Javascript, seperti React.js.`,
+  tentang_saya_2: `Saat ini, saya adalah seorang mahasiswa Institut Teknologi Telkom Purwokerto Fakultas Informatika, program studi Teknik Informatika.`,
+  tentang_saya_3: `
+    Saya memiliki ketertarikan terhadap buku, pemrograman, game, film, dan sekarang sedang mulai tertarik dengan olahraga seperti fitness. 
+    `,
   portfolio: [
     {
-      image: "/assets/pngegg.png",
+      image: "/assets/download.jpg",
       judul: "Website Pembelian Diamond Mobile Legend",
       deskripsi: "Top Up Diamond Murah",
     },
@@ -34,58 +38,92 @@ const MyPortfolio = () => {
   return (
     <div style={{ minHeight: "100vh" }}>
       <div
+        className="hero-bg-cont"
         style={{
           height: "100vh",
           display: "flex",
-          justifyContent: "center",
           alignItems: "center",
           flexDirection: "column",
-          backgroundColor: "skyblue",
+          justifyContent: "center",
         }}
       >
+        <div
+          className="gradient-effect1"
+          style={{ position: "absolute" }}
+        ></div>
+        <div
+          className="gradient-effect2"
+          style={{ position: "absolute" }}
+        ></div>
         <img
           src={PORTFOLIO_DATA.photo_profile}
-          style={{ width: "6rem", height: "6rem" }}
+          style={{ width: "6rem", height: "6rem", borderRadius: "50%" }}
           alt="photo_profile"
         />
-        <h2>{PORTFOLIO_DATA.nama_lengkap}</h2>
-        <code>{PORTFOLIO_DATA.pekerjaan}</code>
-      </div>
-      <div
-        style={{
-          height: "100vh",
-          backgroundColor: "whitesmoke",
+        <h1 style={{ fontSize: "2.5rem", margin: "20px 0 0 0" }}>
+          Hello, I'm {PORTFOLIO_DATA.nama_lengkap}
+        </h1>
+        <h3 style={{ fontSize: "1.5rem" }}>{PORTFOLIO_DATA.pekerjaan}</h3>
+
+        {/* <div style={{
           paddingTop: "2rem",
           paddingLeft: "4rem",
           paddingRight: "4rem",
+        }}>
+          <h3>Tentang Saya</h3>
+          <p style={{ textAlign: "justify" }}>{PORTFOLIO_DATA.tentang_saya}</p>
+        </div> */}
+      </div>
+      <div
+        className="tentang-saya_cont"
+        style={{
+          height: "100vh",
+          paddingTop: "2rem",
+          paddingLeft: "20%",
+          paddingRight: "20%",
         }}
       >
-        <h3>Tentang Saya</h3>
-        <p style={{ textAlign: "justify" }}>{PORTFOLIO_DATA.tentang_saya}</p>
+        <div
+          className="gradient-effect3"
+          style={{ position: "absolute" }}
+        ></div>
+        <h1 style={{ fontSize: "2rem" }}>Tentang Saya</h1>
+        <p style={{ textAlign: "justify" }}>{PORTFOLIO_DATA.tentang_saya_1}</p>
+        <p style={{ textAlign: "justify" }}>{PORTFOLIO_DATA.tentang_saya_2}</p>
+        <p style={{ textAlign: "justify" }}>{PORTFOLIO_DATA.tentang_saya_3}</p>
       </div>
       <div
         style={{
           minHeight: "100vh",
-          backgroundColor: "skyblue",
           paddingTop: "2rem",
-          paddingLeft: "4rem",
-          paddingRight: "4rem",
+          paddingLeft: "20%",
+          paddingRight: "20%",
           paddingBottom: "4rem",
+          overflow:"hidden"
         }}
       >
-        <h3>Portfolio Saya</h3>
+        <h1 style={{ paddingBottom: "50px", fontSize: "2rem" }}>
+          Portfolio Saya
+        </h1>
         <div
           style={{
             display: "flex",
             flexDirection: "row",
-            gap: "1rem",
+            gap: "5rem",
             flexWrap: "wrap",
             justifyContent: "center",
+            position: "relative ",
+           
           }}
         >
+          <div
+            className="gradient-effect4"
+            style={{ position: "absolute" }}
+          ></div>
           {PORTFOLIO_DATA.portfolio.map((item, index) => (
             <div
               key={`portfolio-${index}`}
+              className="box-portofolio"
               style={{
                 border: "1px solid #666666",
                 borderRadius: "12px",
@@ -109,10 +147,15 @@ const MyPortfolio = () => {
             </div>
           ))}
         </div>
-      </div>
-      <div style={{ display: "flex", justifyContent: "center", padding:'4rem' }}>
-        build with ♥ by &nbsp;
-        <a href="https://www.instagram.com/mahardikabayu_desu/">mahardikabayu_desu</a>
+        <div
+        className="madeby"
+          style={{ display: "flex", justifyContent: "center", padding: "4rem" }}
+        >
+          build with ♥ by &nbsp;
+          <a href="https://www.instagram.com/mahardikabayu_desu/">
+            mahardikabayu_desu
+          </a>
+        </div>
       </div>
     </div>
   );
